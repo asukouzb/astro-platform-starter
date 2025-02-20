@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG UC Donat</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        input, button { padding: 10px; margin: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h2>PUBG UC Donat</h2>
+    <p>Iltimos, PUBG ID'ingizni kiriting va to'lov qiling:</p>
+    <input type="text" id="pubgId" placeholder="PUBG ID">
+    <br>
+    <button onclick="makePayment()">To'lov qilish</button>
+
+    <script>
+        function makePayment() {
+            let pubgId = document.getElementById("pubgId").value;
+            if (pubgId === "") {
+                alert("PUBG ID ni kiriting!");
+                return;
+            }
+
+            // TO'LOV HAVOLASI (O'zingizniki bilan almashtiring)
+            let paymentUrl = "https://payme.uz/example?pubgId=" + pubgId;
+            window.location.href = paymentUrl;
+        }
+    </script>
+</body>
+</html>
